@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gameti Dhavalkumar - Interactive Resume india</title>
+    <title>Dhavalkumar Gameti - Data Analyst & Python Developer | Professional Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #525253AB; /* Violet */
-            --secondary: #4F4F4F; /* Teal */
-            --accent: #D4D4D4;   /* Pink */
-            --dark: #2D3748;     /* Dark Grey */
-            --light: #F7FAFC;    /* Off-white */
-            --text: #4A5568;     /* Medium Grey */
-            --bg-gradient: linear-gradient(135deg, #757575BF 0%, #544040 100%); /* Blue-Purple */
-            --card-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Softer shadow */
+            --primary: #2563eb; /* Professional Blue */
+            --secondary: #059669; /* Professional Green */
+            --accent: #7c3aed;   /* Professional Purple */
+            --dark: #1e293b;     /* Dark Blue Grey */
+            --light: #f8fafc;    /* Off-white */
+            --text: #475569;     /* Medium Grey */
+            --bg-gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            --card-shadow: 0 8px 25px rgba(0,0,0,0.1);
             --border-radius: 12px;
         }
 
@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 30px;
             animation: fadeIn 0.8s ease-out;
@@ -50,38 +50,40 @@
         header {
             background: var(--bg-gradient);
             color: white;
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: var(--border-radius);
             margin-bottom: 40px;
             box-shadow: var(--card-shadow);
             position: relative;
             overflow: hidden;
             z-index: 1;
-            animation: slideIn 0.8s ease-out;
+            text-align: center;
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
-            z-index: -1;
-            animation: pulseBg 15s infinite linear;
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        @keyframes pulseBg {
-            0% { transform: rotate(30deg) scale(1); }
-            50% { transform: rotate(30deg) scale(1.1); }
-            100% { transform: rotate(30deg) scale(1); }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
         }
 
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .profile-info {
+            flex: 1;
         }
 
         h1 {
@@ -90,25 +92,12 @@
             font-size: 2.8rem;
             font-weight: 700;
             letter-spacing: -0.8px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 70px;
-            height: 5px;
-            background: var(--accent);
-            border-radius: 2.5px;
         }
 
         .tagline {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             opacity: 0.95;
-            margin-top: 15px;
+            margin-top: 10px;
             font-weight: 300;
         }
 
@@ -116,25 +105,25 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 25px;
+            justify-content: center;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             background: rgba(255,255,255,0.15);
-            padding: 8px 15px;
+            padding: 10px 20px;
             border-radius: 30px;
             backdrop-filter: blur(5px);
-            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .contact-item:hover {
-            transform: translateY(-3px) scale(1.02);
+            transform: translateY(-3px);
             background: rgba(255,255,255,0.25);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         h2 {
@@ -145,7 +134,6 @@
             position: relative;
             display: inline-block;
             padding-bottom: 8px;
-            letter-spacing: -0.5px;
         }
 
         h2::after {
@@ -155,14 +143,8 @@
             left: 0;
             width: 50px;
             height: 4px;
-            background: var(--accent);
+            background: var(--primary);
             border-radius: 2px;
-            animation: underlineExpand 0.5s ease-out forwards;
-        }
-
-        @keyframes underlineExpand {
-            from { width: 0; }
-            to { width: 50px; }
         }
 
         .section {
@@ -175,9 +157,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .skills-container {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
@@ -186,16 +168,12 @@
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--card-shadow);
-            border-left: 5px solid var(--secondary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
         }
 
         .skill-category:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-            border-left-color: var(--primary);
+            transform: translateY(-5px);
         }
 
         .skill-category h3 {
@@ -208,15 +186,6 @@
             gap: 12px;
         }
 
-        .skill-category h3 i {
-            color: var(--primary);
-            font-size: 1.4rem;
-            transition: transform 0.3s ease;
-        }
-        .skill-category:hover h3 i {
-            transform: scale(1.1);
-        }
-
         ul {
             list-style: none;
             padding-left: 0;
@@ -226,22 +195,14 @@
             margin-bottom: 12px;
             position: relative;
             padding-left: 28px;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        li:hover {
-            color: var(--primary);
-            transform: translateX(3px);
         }
 
         li::before {
-            content: '›';
+            content: '▸';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: var(--primary);
             font-weight: bold;
-            font-size: 1.2rem;
-            line-height: 1;
         }
 
         .experience-item, .education-item {
@@ -250,24 +211,12 @@
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.3s ease;
+            border-left: 5px solid var(--primary);
         }
 
         .experience-item:hover, .education-item:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-
-        .experience-item::after, .education-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateY(-5px);
         }
 
         .job-title, .degree {
@@ -275,136 +224,89 @@
             color: var(--dark);
             font-size: 1.2rem;
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .job-title i, .degree i {
-            color: var(--primary);
         }
 
         .company, .institution {
             font-weight: 500;
             color: var(--secondary);
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .company i, .institution i {
-            color: var(--secondary);
         }
 
         .date {
             color: var(--text);
             font-size: 0.9rem;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
             opacity: 0.85;
-        }
-        .date i {
-            color: var(--text);
         }
 
         .highlight {
-            background: linear-gradient(120deg, rgba(108, 99, 255, 0.15) 0%, rgba(108, 99, 255, 0.25) 100%);
+            background: linear-gradient(120deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.2) 100%);
             padding: 3px 10px;
             border-radius: 5px;
             color: var(--primary);
             font-weight: 600;
-            border-left: 4px solid var(--primary);
         }
 
-        .progress-container {
-            background-color: #EDF2F7;
-            border-radius: 10px;
-            margin: 10px 0 5px;
-            height: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            height: 100%;
-            width: 0;
-            transition: width 1.5s ease-out;
-            position: relative;
-        }
-
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                            rgba(255,255,255,0.8) 0%, 
-                            rgba(255,255,255,0) 50%, 
-                            rgba(255,255,255,0.8) 100%);
-            animation: shimmer 2s infinite;
-            animation-delay: 0.5s;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .strength-grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        
-        .strength-card {
+
+        .project-card {
             background: white;
             padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: var(--card-shadow);
             transition: all 0.3s ease;
-            border-bottom: 4px solid var(--primary);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            border-top: 4px solid var(--primary);
         }
 
-        .strength-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
-            border-bottom-color: var(--secondary);
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
-        .strength-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: inline-block;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .strength-card:hover i {
-            transform: scale(1.15) rotate(5deg);
-            color: var(--accent);
-        }
-
-        .strength-title {
-            color: var(--dark);
+        .project-title {
             font-weight: 600;
+            color: var(--dark);
             font-size: 1.1rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .strength-desc {
-            font-size: 0.9rem;
-            color: var(--text);
-            opacity: 0.9;
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
         }
 
         .languages-container {
@@ -412,7 +314,6 @@
             gap: 30px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
         }
 
         .language-card {
@@ -426,14 +327,12 @@
         }
 
         .language-card:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
         .language-flag {
             font-size: 3rem;
             margin-bottom: 12px;
-            line-height: 1;
         }
 
         .language-name {
@@ -445,305 +344,42 @@
         .language-level {
             font-size: 0.85rem;
             color: var(--secondary);
-            font-weight: 500;
         }
 
-        .link-container {
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--dark);
+            color: white;
+            border-radius: var(--border-radius);
+            margin-top: 50px;
+        }
+
+        .social-links {
             display: flex;
+            justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
-        .btn {
+        .social-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
             text-decoration: none;
-            background: linear-gradient(135deg, var(--primary), #8A87A3);
-            color: white;
-            padding: 14px 30px;
-            border-radius: 30px;
-            font-size: 1.05rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 18px rgba(108, 99, 255, 0.35);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.45);
-        }
-
-        .btn:active {
-            transform: translateY(1px);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                            transparent, 
-                            rgba(255,255,255,0.25), 
-                            transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn i {
-            font-size: 1.3rem;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(108, 99, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
-        }
-
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .profile-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            padding: 20px;
-            border-left: 5px solid var(--secondary);
-            border-radius: var(--border-radius);
-            background: linear-gradient(135deg, rgba(249, 250, 251, 0.9), rgba(239, 246, 255, 0.9));
-            box-shadow: var(--card-shadow);
             transition: all 0.3s ease;
         }
-        .profile-text:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-        }
 
-        .interests-list li {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            padding-left: 30px;
-        }
-        .interests-list li i {
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            transition: transform 0.3s ease;
-        }
-        .interests-list li:hover i {
-            transform: scale(1.1);
-        }
-        .interests-list li::before {
-            content: none;
-        }
-
-        /* Sticky Chat Button */
-        .chat-ai-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            animation: pulse 2s infinite, float 4s ease-in-out infinite;
-        }
-
-        .chat-ai-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(108, 99, 255, 0.5);
-        }
-
-        .chat-ai-btn i {
-            font-size: 1.4rem;
-            margin-right: 8px;
-        }
-
-        /* Chat Popup Modal */
-        .chat-popup {
-            display: none;
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            z-index: 1001;
-            width: 350px;
-            max-height: 500px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: slideUp 0.3s ease-out;
-        }
-
-        .chat-popup.active {
-            display: block;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Chat Container */
-        .chat-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 15px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            text-align: center;
-            position: relative;
-        }
-
-        .chat-header h2 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .close-btn:hover {
-            transform: scale(1.2);
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            max-height: 400px;
-        }
-
-        .message {
-            margin-bottom: 10px;
-            padding: 8px 12px;
-            border-radius: 18px;
-            max-width: 70%;
-            font-size: 0.9rem;
-        }
-
-        .bot-message {
-            background-color: #e5e5ea;
-            align-self: flex-start;
-            margin-right: auto;
-        }
-
-        .user-message {
+        .social-link:hover {
             background: var(--primary);
-            color: white;
-            align-self: flex-end;
-            margin-left: auto;
+            transform: translateY(-3px);
         }
 
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-top: 10px;
-        }
-
-        .option-btn {
-            padding: 8px;
-            border: 1px solid var(--secondary);
-            background-color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 0.85rem;
-        }
-
-        .option-btn:hover {
-            background-color: #f0f0f0;
-        }
-
-        .chat-input {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid #ccc;
-        }
-
-        #user-input {
-            flex: 1;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            outline: none;
-            font-size: 0.9rem;
-        }
-
-        #send-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 8px 15px;
-            margin-left: 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        #send-btn:hover {
-            background: var(--secondary);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -753,84 +389,34 @@
                 padding: 30px 15px;
             }
             
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
             h1 {
                 font-size: 2.2rem;
-            }
-            h1::after {
-                bottom: -5px;
-                height: 3px;
-                width: 50px;
             }
             
             h2 {
                 font-size: 1.5rem;
-                margin: 30px 0 15px;
-            }
-            h2::after {
-                height: 3px;
-                width: 40px;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
             }
             
-            .skills-container, .strength-grid {
+            .skills-grid, .projects-grid {
                 grid-template-columns: 1fr;
             }
             
             .contact {
                 flex-direction: column;
-                gap: 10px;
-            }
-            
-            .link-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .btn {
-                width: 100%;
-            }
-
-            .experience-item, .education-item, .skill-category, .strength-card, .language-card {
-                padding: 20px;
-            }
-
-            .job-title, .degree {
-                font-size: 1.1rem;
-            }
-            .company, .institution {
-                font-size: 0.95rem;
-            }
-            .date {
-                font-size: 0.8rem;
-            }
-            .profile-text {
-                font-size: 1rem;
-            }
-
-            .chat-popup {
-                width: 90%;
-                right: 5%;
-                bottom: 80px;
-            }
-
-            .chat-ai-btn {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 20px;
-                font-size: 1rem;
+                align-items: center;
             }
         }
 
-        /* Print styles */
         @media print {
             body {
                 background: white;
-                font-size: 10pt;
-                line-height: 1.4;
+                font-size: 12pt;
                 color: #333;
-                -webkit-print-color-adjust: exact;
             }
             
             .container {
@@ -839,230 +425,173 @@
             }
             
             header {
-                background: linear-gradient(135deg, #667eea, #764ba2);
+                background: #2563eb !important;
                 color: white;
                 box-shadow: none;
-                -webkit-print-color-adjust: exact;
             }
-            header::before {
+            
+            .btn, .social-links {
                 display: none;
             }
-
-            h1, h2 {
-                color: #333 !important;
-                -webkit-print-color-adjust: exact;
-            }
-            h1::after, h2::after {
-                background: #FF6584 !important;
-                -webkit-print-color-adjust: exact;
-            }
-
-            .contact-item {
-                background: transparent;
-                padding: 0;
-                border-radius: 0;
-                box-shadow: none;
-                backdrop-filter: none;
-                color: #555;
-            }
-            .contact-item i {
-                color: #888;
-            }
-
-            .experience-item, .education-item, .skill-category, .strength-card, .language-card {
-                box-shadow: none;
-                border: 1px solid #eee;
+            
+            .section {
                 page-break-inside: avoid;
-                padding: 15px;
-                margin-bottom: 15px;
             }
-            .experience-item::after, .education-item::after {
-                background: linear-gradient(to bottom, #6C63FF, #00BFA6) !important;
-                -webkit-print-color-adjust: exact;
-            }
-            .skill-category {
-                border-left-color: #00BFA6 !important;
-                -webkit-print-color-adjust: exact;
-            }
-            .strength-card {
-                border-bottom-color: #6C63FF !important;
-                -webkit-print-color-adjust: exact;
-            }
-
-            .btn, .pulse, .float, .chat-ai-btn, .chat-popup {
-                display: none;
-            }
-            
-            .progress-bar {
-                width: auto !important;
-                background: #eee !important;
-                -webkit-print-color-adjust: exact;
-            }
-            .progress-bar::after {
-                display: none;
-            }
-
-            .highlight {
-                background: #e6e6ff !important;
-                color: #333 !important;
-                border-left-color: #6C63FF !important;
-                -webkit-print-color-adjust: exact;
-            }
-            
-            @page {
-                margin: 0.8cm;
-            }
-            ul {
-                margin-left: 15px;
-            }
-            li::before {
-                font-size: 1rem;
-                left: -5px;
-            }
-        }
-        
-        .cc {
-            font-size: 55px;
-            text-align: center;
-            color: #008AFF;
-            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="cc">
-            <u style="color:black;"><i class="fas fa-"></i> My Resume</u>
-        </div>
         <header>
-            <div>
-                <h1>Gameti Dhavalkumar Narayanbhai</h1>
-                <p class="tagline">Creative Data Specialist | Python Developer | Excel Analyst</p>
-            </div>
-            <div class="contact">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i> Aravalli, Gujarat
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="my.jpg" alt="Dhavalkumar Gameti" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i> +91-6351182748
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i> gametidhaval980@gmail.com
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe-asia"></i> Preferred: Ahmedabad/Gujarat
+                <div class="profile-info">
+                    <h1>Dhavalkumar Gameti</h1>
+                    <p class="tagline">Data Analyst | Python Developer | Excel Specialist</p>
+                    <div class="contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i> Aravalli, Gujarat, India
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i> +91-6351182748
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i> gametidhaval980@gmail.com
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
 
         <div class="section">
-            <h2><i class="fas fa-user-tie"></i> PROFESSIONAL PROFILE</h2>
-            <div class="profile-text">
-                <p>"An innovation-driven data enthusiast with expertise in Python automation, Excel analytics, and CCC technical certification. Capable of transforming raw data into meaningful solutions through creative thinking and strong analytical skills. Eager to contribute to the development of modern data solutions."</p>
+            <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
+            <div style="background: white; padding: 25px; border-radius: var(--border-radius); box-shadow: var(--card-shadow);">
+                <p style="font-size: 1.1rem; line-height: 1.7;">
+                    Data enthusiast with strong analytical skills and expertise in Python automation, Excel analytics, and data visualization. 
+                    Certified in CCC with proven ability to transform raw data into actionable insights. Seeking to leverage technical skills 
+                    in a challenging data analyst role to drive business decisions and process improvements.
+                </p>
             </div>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-laptop-code"></i> TECHNICAL SKILLS</h2>
-            <div class="skills-container">
+            <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+            <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Data Mastery</h3>
+                    <h3><i class="fas fa-database"></i> Data Analysis</h3>
                     <ul>
-                        <li>Excel <span class="progress-container"><span class="progress-bar" data-width="85%"></span></span></li>
-                        <li>Data Visualization <span class="progress-container"><span class="progress-bar" data-width="75%"></span></span></li>
-                        <li>MIS Reporting <span class="progress-container"><span class="progress-bar" data-width="80%"></span></span></li>
+                        <li>Advanced Excel (Formulas, PivotTables, Charts)</li>
+                        <li>Data Visualization & Dashboard Creation</li>
+                        <li>MIS Reporting & Data Processing</li>
+                        <li>Google Sheets & Data Management</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Programming</h3>
                     <ul>
-                        <li>Python <span class="progress-container"><span class="progress-bar" data-width="70%"></span></span></li>
-                        <li>Automation <span class="progress-container"><span class="progress-bar" data-width="65%"></span></span></li>
+                        <li>Python Programming</li>
+                        <li>Data Automation Scripts</li>
+                        <li>CSV/Excel File Processing</li>
+                        <li>Basic Web Development</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <h3><i class="fas fa-tools"></i> Tools & Certifications</h3>
                     <ul>
-                        <li>MS Office <span class="progress-container"><span class="progress-bar" data-width="90%"></span></span></li>
-                        <li>Google Sheets <span class="progress-container"><span class="progress-bar" data-width="85%"></span></span></li>
+                        <li>Microsoft Office Suite</li>
+                        <li>CCC Certification</li>
+                        <li>Data Cleaning & Validation</li>
+                        <li>Process Automation</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             <div class="education-item">
-                <div class="degree"><i class="fas fa-university"></i> Bachelor of Arts (B.A.) - Ongoing</div>
-                <div class="company"><i class="fas fa-school"></i> K.R. Arts College Samalaji, Aravalli, Gujarat</div>
-                <div class="date"><i class="far fa-calendar-alt"></i> 2023 – Present (Expected Completion: 2026)</div>
+                <div class="degree">Bachelor of Arts (B.A.)</div>
+                <div class="institution">K.R. Arts College Samalaji, Aravalli, Gujarat</div>
+                <div class="date">2023 – Present (Expected Graduation: 2026)</div>
                 <ul>
-                    <li>Currently pursuing Bachelor's degree with a focus on social sciences</li>
-                    <li>Participated in basic data and computer application coursework</li>
+                    <li>Pursuing degree with focus on analytical and critical thinking skills</li>
+                    <li>Relevant coursework: Data Analysis basics, Computer Applications</li>
                 </ul>
             </div>
             <div class="education-item">
-                <div class="degree"><i class="fas fa-graduation-cap"></i> Higher Secondary (12th Grade)</div>
-                <div class="company"><i class="fas fa-school"></i> The Lusadiya Hischool, Lusadiya, Gujarat Board</div>
-                <div class="date"><i class="far fa-calendar-alt"></i> 2022 – 2023</div>
+                <div class="degree">Higher Secondary (12th Grade)</div>
+                <div class="institution">The Lusadiya High School, Lusadiya, Gujarat Board</div>
+                <div class="date">2022 – 2023</div>
                 <ul>
-                    <li>Completed 12th in Arts stream with 75%</li>
-                    <li>Developed strong foundational knowledge in various subjects</li>
+                    <li>Completed with 75% in Arts stream</li>
+                    <li>Developed strong foundation in analytical subjects</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-project-diagram"></i> KEY PROJECTS</h2>
+            <h2><i class="fas fa-project-diagram"></i> Projects & Achievements</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">
+                        <i class="fas fa-file-excel"></i> Excel Automation System
+                    </div>
+                    <ul>
+                        <li>Developed automated data entry and processing system</li>
+                        <li>Created interactive dashboards with dynamic visualizations</li>
+                        <li>Reduced manual data processing time by 40%</li>
+                    </ul>
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <a href="https://excelutomation.netlify.app/" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">
+                        <i class="fab fa-python"></i> Python Data Processor
+                    </div>
+                    <ul>
+                        <li>Built scripts for automated data cleaning processes</li>
+                        <li>Implemented CSV to Excel conversion tools</li>
+                        <li>Created data validation and analysis scripts</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">
+                        <i class="fas fa-chart-line"></i> MIS Dashboard
+                    </div>
+                    <ul>
+                        <li>Developed comprehensive management information system</li>
+                        <li>Implemented real-time data tracking and reporting</li>
+                        <li>Enhanced decision-making capabilities</li>
+                    </ul>
+                    <div style="margin-top: 20px;">
+                        <a href="https://misvvv.netlify.app/" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i> View Dashboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-certificate"></i> Certifications</h2>
             <div class="experience-item">
-                <div class="job-title"><i class="fas fa-file-excel"></i> Excel Automation System</div>
+                <div class="job-title">CCC Certificate</div>
+                <div class="company">National Institute of Electronics & Information Technology (NIELIT)</div>
                 <ul>
-                    <li>Developed <span class="highlight">excel automation</span> for fast data entry</li>
-                    <li>Created interactive dashboards with <span class="highlight">dynamic visualizations</span></li>
-                </ul>
-                <div class="link-container">
-                    <a href="https://excelutomation.netlify.app/" target="_blank" class="btn pulse">
-                        <i class="fas fa-external-link-alt"></i> Excel Automation Demo
-                    </a>
-                    <a href="https://misvvv.netlify.app/" target="_blank" class="btn pulse">
-                        <i class="fas fa-external-link-alt"></i> MIS Dashboard Demo
-                    </a>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="job-title"><i class="fab fa-python"></i> Python Data Processor</div>
-                <ul>
-                    <li>Built scripts to <span class="highlight">automate data cleaning</span> processes</li>
-                    <li>Implemented <span class="highlight">CSV to Excel</span> conversion tools</li>
-                    <li>Reduced manual data processing time by approximately 30%</li>
+                    <li>Certified in Computer Concepts demonstrating proficiency in computer fundamentals</li>
+                    <li>Covering topics: Computer basics, Office tools, Internet applications</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-star"></i> CORE STRENGTHS</h2>
-            <div class="strength-grid">
-                <div class="strength-card">
-                    <i class="fas fa-laptop-code float"></i>
-                    <div class="strength-title">Basic Programming</div>
-                    <div class="strength-desc">Proficient in Python scripting for task automation and data handling.</div>
-                </div>
-                <div class="strength-card">
-                    <i class="fas fa-file-excel float"></i>
-                    <div class="strength-title">Excel Handling</div>
-                    <div class="strength-desc">Expert in organizing, analyzing, and presenting data using advanced Excel functions.</div>
-                </div>
-                <div class="strength-card">
-                    <i class="fas fa-certificate float"></i>
-                    <div class="strength-title">Computer Skills</div>
-                    <div class="strength-desc">Certified in CCC, demonstrating a strong foundation in computer operations and applications.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2><i class="fas fa-language"></i> LANGUAGES</h2>
+            <h2><i class="fas fa-language"></i> Languages</h2>
             <div class="languages-container">
                 <div class="language-card">
                     <div class="language-flag">🇮🇳</div>
@@ -1077,219 +606,65 @@
                 <div class="language-card">
                     <div class="language-flag">🇬🇧</div>
                     <div class="language-name">English</div>
-                    <div class="language-level">Intermediate</div>
+                    <div class="language-level">Professional</div>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-award"></i> CERTIFICATIONS</h2>
-            <div class="experience-item">
-                <ul>
-                    <li><i class="fas fa-certificate"></i> CCC Certificate – National Institute of Electronics & Information Technology</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2><i class="fas fa-heart"></i> INTERESTS</h2>
-            <ul class="interests-list">
-                <li><i class="fab fa-python"></i> Learning new Python libraries (like Pandas, OpenPyXL) to expand data processing capabilities.</li>
-                <li><i class="fab fa-youtube"></i> Watching Tech & Data Analysis YouTube channels to stay updated on industry trends.</li>
-                <li><i class="fas fa-calculator"></i> Solving Excel formula challenges to enhance problem-solving and analytical skills.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2><i class="fas fa-link"></i> MY WEBSITE</h2>
-            <div class="link-container">
-                <a href="https://password-streth-cheker.netlify.app/" target="_blank" class="btn">
+            <h2><i class="fas fa-rocket"></i> Additional Projects</h2>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="https://password-streth-cheker.netlify.app/" target="_blank" class="btn btn-outline">
                     <i class="fas fa-lock"></i> Password Checker
                 </a>
-                <a href="https://typingclub.netlify.app/" target="_blank" class="btn">
+                <a href="https://typingclub.netlify.app/" target="_blank" class="btn btn-outline">
                     <i class="fas fa-keyboard"></i> Typing Club
                 </a>
             </div>
-            <p style="margin-top: 20px; font-style: italic; color: var(--text);">
-                <i class="fas fa-info-circle"></i> Please check the "About" section on these websites for more details.
-            </p>
         </div>
 
-        <div class="section">
-            <h2><i class="fas fa-address-card"></i> REFERENCES</h2>
-            <p>Available upon request</p>
-        </div>
-    </div>
-
-    <!-- Sticky Chat Button -->
-    <button id="chat-ai-btn" class="btn chat-ai-btn pulse">
-        <i class="fas fa-robot"></i> Chat with AI
-    </button>
-
-    <!-- Chatbot Popup Modal -->
-    <div id="chat-popup" class="chat-popup">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h2>Help Desk Chatbot</h2>
-                <button id="close-chat" class="close-btn"><i class="fas fa-times"></i></button>
+        <footer>
+            <h3 style="color: white; margin-bottom: 20px;">Connect With Me</h3>
+            <div class="social-links">
+                <a href="https://github.com/dhaval-gamet" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://instagram.com/d_n_gameti" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:gametidhaval980@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
-            <div class="chat-messages" id="chat-messages"></div>
-            <div class="chat-input">
-                <input type="text" id="user-input" placeholder="Type your message...">
-                <button id="send-btn">Send</button>
-            </div>
-        </div>
+            <p style="margin-top: 20px; opacity: 0.8;">&copy; 2024 Dhavalkumar Gameti. All rights reserved.</p>
+        </footer>
     </div>
-    <footer style="text-align: center; padding: 20px; background-color: #f0f0f0;">
-    <p>Connect with mme:</p>
-    
-    <a href="https://github.com/dhaval-gamet" target="_blank" style="margin: 0 10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="30">
-    </a>
-    
-    <a href="https://instagram.com/d_n_gameti" target="_blank" style="margin: 0 10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="30">
-    </a>
-</footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Header slide-in animation
-            const header = document.querySelector('header');
-            if (header) {
-                header.style.opacity = '0';
-                header.style.transform = 'translateY(-50px)';
-                setTimeout(() => {
-                    header.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                    header.style.opacity = '1';
-                    header.style.transform = 'translateY(0)';
-                }, 100);
-            }
-
-            // Progress Bar Animation using Intersection Observer
-            const progressBars = document.querySelectorAll('.progress-bar');
+            // Add smooth animations
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.8
+                threshold: 0.1
             };
-            const progressBarObserver = new IntersectionObserver((entries, observer) => {
+
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const bar = entry.target;
-                        const width = bar.dataset.width;
-                        bar.style.width = width;
-                        observer.unobserve(bar);
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
                     }
                 });
             }, observerOptions);
-            progressBars.forEach(bar => {
-                bar.style.width = '0%';
-                progressBarObserver.observe(bar);
-            });
 
-            // Chat Button and Popup Toggle
-            const chatBtn = document.getElementById('chat-ai-btn');
-            const chatPopup = document.getElementById('chat-popup');
-            const closeChat = document.getElementById('close-chat');
-            
-            chatBtn.addEventListener('click', function() {
-                chatPopup.classList.toggle('active');
-                if (chatPopup.classList.contains('active')) {
-                    if (!chatPopup.dataset.initialized) {
-                        initializeChatbot();
-                        chatPopup.dataset.initialized = 'true';
-                    }
-                }
+            // Observe all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
             });
-            
-            closeChat.addEventListener('click', function() {
-                chatPopup.classList.remove('active');
-            });
-
-            // Chatbot Functionality
-            function initializeChatbot() {
-                const chatMessages = document.getElementById('chat-messages');
-                const userInput = document.getElementById('user-input');
-                const sendBtn = document.getElementById('send-btn');
-                
-                const responses = {
-                    '1': 'You selected Option 1: "An innovation-driven data enthusiast with expertise in Python automation, Excel analytics, and CCC technical certification. Capable of transforming raw data into meaningful solutions through creative thinking and strong analytical skills. Eager to contribute to the development of modern data solutions."',
-                    '2': 'You selected Option 2:Data Mastery, Excel, Data Visualization, MIS Reporting, Programming, Python, Automation Tools, MS Office, Google Sheets',
-                    '3': 'You selected Option 3: Bachelor of Arts (B.A.) - Ongoing  K.R. Arts College Samalaji, Aravalli, Gujarat  2023 – Present (Expected Completion: 2026)  - Currently pursuing Bachelors degree with a focus on social sciences  - Participated in basic data and computer application coursework  Higher Secondary (12th Grade)  The Lusadiya High School, Lusadiya, Gujarat Board  2022 – 2023  - Completed 12th in Arts stream with 75%  - Developed strong foundational knowledge in various subjects',
-                    '4': 'You selected Option 4: Basic Programming  Proficient in Python scripting for task automation and data handling.  Excel Handling  Expert in organizing, analyzing, and presenting data using advanced Excel functions.  Computer Skills  Certified in CCC, demonstrating a strong foundation in computer operations and applications.',
-                    '5': 'You selected Option 5: CCC Certificate– National Institute of Electronics & Information Technology INTERESTS'
-                };
-                
-                function showInitialOptions() {
-                    const optionsMessage = document.createElement('div');
-                    optionsMessage.className = 'message bot-message';
-                    optionsMessage.innerHTML = `
-                        <p>Hello! How can I help you today?</p>
-                        <div class="options">
-                            <button class="option-btn" data-option="1">1. PROFESSIONAL PROFILE</button>
-                            <button class="option-btn" data-option="2">2. TECHNICAL SKILLS</button>
-                            <button class="option-btn" data-option="3">3. EDUCATION</button>
-                            <button class="option-btn" data-option="4">4. CORE STRENGTHS</button>
-                            <button class="option-btn" data-option="5">5. CERTIFICATIONS</button>
-                        </div>
-                    `;
-                    chatMessages.appendChild(optionsMessage);
-                    
-                    const optionButtons = document.querySelectorAll('.option-btn');
-                    optionButtons.forEach(button => {
-                        button.addEventListener('click', function() {
-                            const option = this.getAttribute('data-option');
-                            handleOptionSelection(option);
-                        });
-                    });
-                    
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }
-                
-                function handleOptionSelection(option) {
-                    addMessage(`Option ${option}`, 'user-message');
-                    setTimeout(() => {
-                        addMessage(responses[option], 'bot-message');
-                        setTimeout(showInitialOptions, 500);
-                    }, 500);
-                }
-                
-                function addMessage(text, className) {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.className = `message ${className}`;
-                    messageDiv.textContent = text;
-                    chatMessages.appendChild(messageDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }
-                
-                sendBtn.addEventListener('click', function() {
-                    const message = userInput.value.trim();
-                    if (message) {
-                        addMessage(message, 'user-message');
-                        userInput.value = '';
-                        if (/^[1-5]$/.test(message)) {
-                            handleOptionSelection(message);
-                        } else {
-                            setTimeout(() => {
-                                addMessage("Please select an option from 1 to 5 for assistance.", 'bot-message');
-                                showInitialOptions();
-                            }, 500);
-                        }
-                    }
-                });
-                
-                userInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        sendBtn.click();
-                    }
-                });
-                
-                setTimeout(() => {
-                    addMessage("Welcome to our support chatbot!", 'bot-message');
-                    showInitialOptions();
-                }, 500);
-            }
         });
     </script>
 </body>
